@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff0f6">
+    <meta name="description" content="Happy Birthday My Princess">
+
+    <title>Happy Birthday Beee</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.css">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="floating-hearts" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar site-nav">
+        <div class="container">
+            <a class="navbar-brand brand" href="#">
+                <span>♥</span> Beee
+            </a>
+
+            <span class="nav-note">
+                A little surprise made with love ♡
+            </span>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HALAMAN PEMBUKA -->
+        <section id="introScreen" class="screen intro-screen">
+            <div class="container py-5">
+                <div class="row align-items-center justify-content-center g-4">
+
+                    <div class="col-12 col-lg-6 text-center text-lg-start">
+                        <span class="eyebrow">
+                            <i class="bi bi-stars"></i> A SPECIAL DAY
+                        </span>
+
+                        <h1 class="display-title mt-3">
+                            A Special Surprise<br>
+                            for You <span>♡</span>
+                        </h1>
+
+                        <p class="intro-copy">
+                            Sebelum kita mulai, boleh tahu dulu nama kamu dan
+                            berapa umur kamu sekarang? Biar kejutan ini jadi
+                            lebih spesial~
+                        </p>
+
+                        <form id="birthdayForm" class="birthday-form text-start">
+
+                            <div class="mb-3">
+                                <label for="personName" class="form-label">
+                                    Nama kamu
+                                </label>
+
+                                <div class="input-group input-cute">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person-heart"></i>
+                                    </span>
+
+                                    <input type="text" id="personName" class="form-control"
+                                        placeholder="Tulis nama panggilan..." maxlength="40" required>
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Isi nama kamu dulu, ya
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="personAge" class="form-label">
+                                    Umur kamu
+                                </label>
+
+                                <div class="input-group input-cute">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-calendar-heart"></i>
+                                    </span>
+
+                                    <input type="number" id="personAge" class="form-control" min="1" max="120"
+                                        placeholder="Umur kamu sekarang..." required>
+
+                                    <span class="input-group-text">tahun</span>
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Masukkan umur yang valid, ya.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-surprise w-100">
+                                <i class="bi bi-gift-fill me-2"></i>
+                                Buka Kejutan
+                            </button>
+
+                            <p class="form-footnote text-center mt-3 mb-0">
+                                Dibuat dengan cinta khusus untuk Beee ♡
+                            </p>
+
+                        </form>
+                    </div>
+
+                    <!-- DEKORASI KARAKTER -->
+
+                    <div class="col-10 col-sm-8 col-lg-5 mx-auto">
+                        <div class="mascot-stage">
+                            <span class="doodle doodle-one">♡</span>
+                            <span class="doodle doodle-two">✦</span>
+                            <span class="doodle doodle-three">♡</span>
+
+                            <div class="mascot-images">
+                                <div class="mascot-emoji capybara">
+                                    <img src="assets/image/capy.png" alt="Capybara">
+                                </div>
+
+                                <div class="mascot-emoji minion">
+                                    <img src="assets/image/bob.png" alt="Minion">
+                                </div>
+                            </div>
+
+                            <div class="mascot-caption">
+                                You are so special! ♡
+                            </div>
+
+                            <div class="cloud cloud-left"></div>
+                            <div class="cloud cloud-right"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ANIMASI KEJUTAN -->
+        <section id="loadingScreen" class="screen loading-screen d-none">
+            <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+                <div class="text-center loading-content">
+
+                    <div class="loading-mascots mb-3">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="confetti-word">✦ ♡ ✧ ♡ ✦</div>
+
+                    <h2 class="section-title mt-3">
+                        Menyiapkan kejutan spesial!
+                    </h2>
+
+                    <p class="text-muted">
+                        Sebentar, ya. Sesuatu yang manis sedang datang~
+                    </p>
+
+                    <div class="progress progress-cute mt-4">
+                        <div id="loadingProgress" class="progress-bar" style="width: 0%"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN UCAPAN -->
+        <section id="birthdayScreen" class="screen birthday-screen d-none">
+            <div class="container py-4 py-lg-5">
+
+                <div class="d-flex justify-content-end mb-3">
+                    <button id="musicButton" class="btn btn-music" type="button">
+                        <i class="bi bi-music-note-beamed me-1"></i>
+                        <span id="musicButtonText">Putar Musik</span>
+                    </button>
+                </div>
+
+                <!-- Ucapan utama -->
+                <section class="birthday-hero panel-cute text-center">
+
+                    <span class="eyebrow">
+                        <i class="bi bi-balloon-heart-fill"></i>
+                        TODAY IS ALL ABOUT YOU
+                    </span>
+
+                    <h1 class="birthday-title mt-3">
+                        Happy Birthday,<br>
+                        <span id="displayName">Sayangku</span>!
+                        <span class="title-heart">♡</span>
+                    </h1>
+
+                    <div class="age-pill">
+                        Sekarang Beee berumur
+                        <strong id="displayAge">18</strong> tahun <i class="bi bi-gift-fill me-2"></i>
+                    </div>
+
+                    <div class="row align-items-center g-4 mt-2">
+
+                        <div class="col-12 col-lg-7 order-2 order-lg-1">
+                            <div class="love-letter text-start">
+
+                                <p>Di hari yang spesial ini, Bukan cuma tentang bertambahnya usia, tapi juga tentang
+                                    merayakan segala
+                                    proses, kerja keras, dan kedewasaan yang sudah Beee tunjukan selama ini</p>
+
+                                <p>
+                                    Saya selalu bangga melihat bagaimana Beee bertumbuh menjadi pribadi yang hebat. Maaf
+                                    kalau saya belum
+                                    bisa jadi kakak yang sempurna, tapi yaa saya janji untuk selalu berusaha berjalan di
+                                    samping Beee,
+                                    melewati setiap babak kehidupan ini bersama-sama.
+                                </p>
+
+                                <p>
+                                    Semoga kedepannya akan membawa banyak kejutan manis
+                                    dan keberhasilan untuk semua rencana Beee.
+                                </p>
+
+                                <p>
+                                    Selamat hari spesial kesayangannn ♡
+                                </p>
+
+                                <p class="signature">
+                                    Happy Birthday, Kesayangannn!
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-10 col-sm-8 col-lg-5 mx-auto">
+                            <div class="mascot-stage">
+                                <span class="doodle doodle-one">♡</span>
+                                <span class="doodle doodle-two">✦</span>
+                                <span class="doodle doodle-three">♡</span>
+
+                                <div class="mascot-images">
+                                    <div class="mascot-emoji capybara">
+                                        <img src="assets/image/capy.png" alt="Capybara">
+                                    </div>
+
+                                    <div class="mascot-emoji minion">
+                                        <img src="assets/image/bob.png" alt="Minion">
+                                    </div>
+                                </div>
+
+                                <div class="mascot-caption">
+                                    You are so special! ♡
+                                </div>
+
+                                <div class="cloud cloud-left"></div>
+                                <div class="cloud cloud-right"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- GALERI FOTO -->
+                <section class="memories-section mt-4 mt-lg-5">
+
+                    <div class="section-heading">
+                        <span class="section-icon">
+                            <i class="bi bi-images"></i>
+                        </span>
+
+                        <div>
+                            <h2 class="section-title mb-1">Foto-Foto</h2>
+                            <p class="section-subtitle mb-0">
+                                My princess yang paling cantik, imut, dan menggemaskan ♡
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 g-md-4 mt-2">
+
+                        <div class="col-6 col-lg-4">
+                            <div class="memory-card">
+                                <img src="assets/image/my-princess.jpg">
+                                <p>My princess ♡</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-4">
+                            <div class="memory-card">
+                                <img src="assets/image/cantik.jpg">
+                                <p>Cantik ♡</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-4">
+                            <div class="memory-card">
+                                <img src="assets/image/lucu.jpg">
+                                <p>Lucu ♡</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-4">
+                            <div class="memory-card">
+                                <img src="assets/image/imut.jpg">
+                                <p>Imut ♡</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-4">
+                            <div class="memory-card">
+                                <img src="assets/image/menggemaskan.jpg">
+                                <p>Menggemaskan ♡</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-lg-4">
+                            <div class="memory-card">
+                                <img src="assets/image/kesayangan.jpg">
+                                <p>Kesayangan ♡</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- PESAN RAHASIA -->
+                <section class="secret-section text-center mt-4 mt-lg-5">
+                    <div class="secret-card">
+
+                        <div class="secret-icon">
+                            <i class="bi bi-envelope-heart-fill me-2"></i>
+                        </div>
+
+                        <h2 class="section-title">
+                            Masih ada satu lagi...
+                        </h2>
+
+                        <p class="text-muted">
+                            Ada pesan kecil yang sengaja saya simpan untuk Beee.
+                        </p>
+
+                        <button id="secretButton" class="btn btn-surprise" type="button">
+                            <i class="bi bi-envelope-heart-fill me-2"></i>
+                            Buka Pesan Rahasia
+                        </button>
+
+                        <div id="secretMessage" class="secret-message d-none mt-4">
+                            <p>
+                                Happy birthday, ya. Semoga semua hal baik selalu datang ke Beee. Jangan lupa jaga
+                                kesehatan, jangan
+                                terlalu keras sama diri sendiri, dan tetap jadi diri Beee yang saya kenal. Saya memang
+                                tidak pandai
+                                tunjukan rasa sayang, tapi saya selalu berharap Beee bahagia.
+                            </p>
+
+                            <strong>
+                                Love You Kesayangannn ♡
+                            </strong>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="site-footer text-center py-4">
+                    <p>Made with <i class="bi bi-heart-fill"></i> just for you</p>
+                    <small>Semoga hari ini semanis kamu. ♡</small>
+                    <div>
+                        <button id="replayButton" class="btn btn-link btn-sm">
+                            Lihat halaman awal lagi
+                        </button>
+                    </div>
+                </footer>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- File musik: tambahkan lagu.mp3 ke assets/music -->
+    <audio id="birthdayAudio" src="assets/music/lany-xxl.mp3" loop></audio>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

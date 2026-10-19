@@ -1,0 +1,914 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Pacifico&display=swap');
+
+:root {
+  --pink-50: #fff6fa;
+  --pink-100: #ffedf4;
+  --pink-200: #ffd4e5;
+  --pink-300: #ffb4d0;
+  --pink-500: #f45b9a;
+  --pink-600: #df347c;
+  --pink-700: #a82a62;
+  --ink: #60334b;
+  --muted: #916b7d;
+  --shadow: 0 18px 55px rgba(192, 74, 125, .12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: var(--ink);
+  background: linear-gradient(
+    145deg,
+    #fff8fb 0%,
+    #ffedf5 48%,
+    #fff6fa 100%
+  );
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+.site-nav {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, .7);
+  border-bottom: 1px solid rgba(224, 91, 146, .14);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  font-family: 'Pacifico', cursive;
+  color: var(--pink-600) !important;
+  font-size: 1.25rem;
+}
+
+.brand span {
+  font-family: sans-serif;
+}
+
+.nav-note {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* SECTION */
+
+.screen {
+  position: relative;
+  min-height: calc(100vh - 58px);
+}
+
+.intro-screen::before,
+.birthday-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .55;
+  background-image: radial-gradient(#ffc1d9 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.intro-screen > .container,
+.birthday-screen > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* FORM PEMBUKA */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .45rem .8rem;
+  border-radius: 999px;
+  color: var(--pink-600);
+  background: #ffe0ec;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.display-title {
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  color: var(--pink-700);
+  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+}
+
+.display-title span {
+  color: var(--pink-500);
+}
+
+.intro-copy {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+  max-width: 490px;
+}
+
+.birthday-form {
+  max-width: 460px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(237, 123, 167, .2);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: var(--shadow);
+}
+
+.form-label {
+  font-size: .88rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.input-cute .input-group-text,
+.input-cute .form-control {
+  border-color: #f3d5e2;
+  background: #fffafd;
+  min-height: 49px;
+}
+
+.input-cute .input-group-text {
+  color: var(--pink-500);
+}
+
+.input-cute .form-control {
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.input-cute .form-control:focus {
+  border-color: var(--pink-500);
+  box-shadow: 0 0 0 .2rem rgba(244, 91, 154, .12);
+}
+
+.form-footnote {
+  color: #b18a9c;
+  font-size: .75rem;
+}
+
+/* BUTTON */
+
+.btn-surprise {
+  border: 0;
+  border-radius: 13px;
+  padding: .9rem 1.2rem;
+  color: white;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--pink-500), #ed4289);
+  box-shadow: 0 9px 20px rgba(244, 91, 154, .25);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn-surprise:hover,
+.btn-surprise:focus {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(244, 91, 154, .32);
+}
+
+/* CAPYBARA DAN DEKORASI */
+
+.mascot-stage {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 48% 52% 43% 57% / 49% 44% 56% 51%;
+  background: radial-gradient(
+    circle at 50% 40%,
+    #ffe0ec,
+    rgba(255, 221, 235, .35) 58%,
+    transparent 72%
+  );
+}
+
+.mascot-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 12px 10px rgba(145, 57, 94, .12));
+  position: absolute;
+  animation: bob 3.3s ease-in-out infinite;
+}
+
+.capybara {
+  font-size: clamp(8rem, 18vw, 13rem);
+  left: 8%;
+  bottom: 52px;
+  transform: rotate(-8deg);
+}
+
+.minion {
+  font-size: clamp(6rem, 13vw, 9rem);
+  right: 5%;
+  bottom: 66px;
+  animation-delay: -.8s;
+}
+
+.doodle {
+  position: absolute;
+  color: var(--pink-500);
+  font-size: 3rem;
+  font-weight: 900;
+  animation: bob 2.8s ease-in-out infinite;
+}
+
+.doodle-one {
+  top: 12%;
+  left: 14%;
+}
+
+.doodle-two {
+  top: 20%;
+  right: 18%;
+  color: #f7bf4b;
+}
+
+.doodle-three {
+  top: 42%;
+  right: 7%;
+}
+
+.mascot-caption {
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  color: var(--pink-600);
+  font-family: 'Pacifico', cursive;
+  font-size: 1.1rem;
+  transform: rotate(8deg);
+}
+
+.cloud {
+  position: absolute;
+  height: 34px;
+  width: 42%;
+  bottom: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .75);
+  filter: blur(1px);
+}
+
+.cloud-left {
+  left: 0;
+}
+
+.cloud-right {
+  right: 0;
+}
+
+/* LOADING KEJUTAN */
+
+.loading-screen {
+  background: radial-gradient(circle at center, #ffe2ee, #fff4f9 70%);
+}
+
+.loading-content {
+  width: min(100%, 420px);
+}
+
+.loading-mascots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  font-size: clamp(4rem, 10vw, 6rem);
+}
+
+.loading-mascots span {
+  animation: bob 1.8s ease-in-out infinite;
+}
+
+.loading-mascots span:last-child {
+  animation-delay: -.6s;
+}
+
+.confetti-word {
+  color: var(--pink-500);
+  letter-spacing: .6rem;
+}
+
+.section-title {
+  color: var(--pink-700);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 900;
+}
+
+.progress-cute {
+  height: 13px;
+  border-radius: 100px;
+  padding: 2px;
+  background: white;
+  border: 1px solid #f5b5cf;
+}
+
+.progress-cute .progress-bar {
+  border-radius: 100px;
+  background: linear-gradient(90deg, #f6a1c2, var(--pink-500));
+  transition: width .2s;
+}
+
+/* UCAPAN ULANG TAHUN */
+
+.panel-cute {
+  border: 1px solid rgba(237, 123, 167, .2);
+  background: rgba(255, 255, 255, .75);
+  border-radius: 30px;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.birthday-title {
+  color: var(--pink-700);
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  font-weight: 900;
+}
+
+.birthday-title > span:first-child {
+  color: var(--pink-500);
+}
+
+.title-heart,
+.pink-text {
+  color: var(--pink-500);
+}
+
+.age-pill {
+  display: inline-block;
+  background: #ffe3ef;
+  color: var(--pink-700);
+  border-radius: 999px;
+  padding: .5rem 1rem;
+  font-size: .88rem;
+  margin-top: .6rem;
+}
+
+.love-letter {
+  max-width: 650px;
+  margin-inline: auto;
+  line-height: 1.85;
+  font-size: .99rem;
+  color: #79546a;
+}
+
+.love-letter p {
+  margin-bottom: .85rem;
+}
+
+.signature {
+  font-family: 'Pacifico', cursive;
+  color: var(--pink-600);
+  font-size: 1.2rem;
+}
+
+/* KARAKTER DI HALAMAN UCAPAN */
+
+.birthday-mascots {
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #ffe1ed, transparent 70%);
+}
+
+.big-capy {
+  font-size: clamp(7rem, 15vw, 10rem);
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 8px 8px #e6a8bf55);
+  z-index: 1;
+}
+
+.big-minion {
+  font-size: clamp(5rem, 11vw, 7rem);
+  margin-left: -1.7rem;
+  margin-top: 3rem;
+  z-index: 2;
+  filter: drop-shadow(0 8px 8px #e6a8bf55);
+}
+
+.cake {
+  position: absolute;
+  bottom: 6%;
+  left: 43%;
+  font-size: 4rem;
+  z-index: 3;
+}
+
+.balloon {
+  position: absolute;
+  font-size: 2.8rem;
+  animation: bob 3s ease-in-out infinite;
+}
+
+.balloon-one {
+  left: 8%;
+  top: 7%;
+}
+
+.balloon-two {
+  right: 9%;
+  top: 2%;
+  animation-delay: -1s;
+}
+
+.mascot-heart {
+  position: absolute;
+  right: 17%;
+  top: 38%;
+  color: var(--pink-500);
+  font-size: 3rem;
+}
+
+/* MUSIK */
+
+.btn-music {
+  color: var(--pink-700);
+  background: white;
+  border: 1px solid #f5d2e0;
+  border-radius: 999px;
+  padding: .6rem 1rem;
+  font-weight: 800;
+}
+
+.btn-music:hover,
+.btn-music.is-playing {
+  color: white;
+  background: var(--pink-500);
+  border-color: var(--pink-500);
+}
+
+/* GALERI FOTO */
+
+.memories-section {
+  padding: clamp(1.25rem, 4vw, 2.4rem);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(237, 123, 167, .18);
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+}
+
+.section-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  color: var(--pink-600);
+  background: #ffe3ef;
+  border-radius: 16px;
+  font-size: 1.35rem;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.memory-card {
+  width: 100%;
+  padding: .55rem .55rem .8rem;
+  border: 1px solid #f4d8e4;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 7px 18px #8c3e5b0d;
+  transform: rotate(-1deg);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.memory-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.memory-card:hover {
+  transform: translateY(-5px) rotate(0);
+  box-shadow: 0 14px 28px #8c3e5b20;
+}
+
+.memory-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #ffe6f0;
+}
+
+.memory-card p {
+  padding: .65rem .25rem 0;
+  margin: 0;
+  color: var(--pink-700);
+  font-family: 'Pacifico', cursive;
+  font-size: .9rem;
+  text-align: center;
+}
+
+/* PESAN RAHASIA */
+
+.secret-card {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffe4ef, #fffafd);
+  border: 1px dashed #f2a7c5;
+}
+
+.secret-icon {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
+.secret-message {
+  max-width: 650px;
+  margin-inline: auto;
+  padding: 1.2rem;
+  border-radius: 18px;
+  color: var(--pink-700);
+  background: white;
+  line-height: 1.8;
+  animation: fadeUp .45s ease both;
+}
+
+/* FOOTER */
+
+.site-footer {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.site-footer i {
+  color: var(--pink-500);
+}
+
+.site-footer small {
+  color: #b18a9c;
+}
+
+.site-footer .btn-link {
+  color: var(--pink-600);
+  text-decoration: none;
+}
+
+/* ANIMASI */
+
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -30px;
+  color: #f27eac;
+  opacity: 0;
+  animation: floatUp 5.5s linear forwards;
+}
+
+.celebration-heart {
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+  animation: burst 1.5s ease-out forwards;
+}
+
+.d-none {
+  display: none !important;
+}
+
+@keyframes bob {
+  0%, 100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .8;
+  }
+
+  85% {
+    opacity: .65;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes burst {
+  0% {
+    transform: translate(0, 0) scale(.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.2) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE HP DAN TABLET */
+
+@media (max-width: 767.98px) {
+  .screen {
+    min-height: calc(100vh - 56px);
+  }
+
+  .intro-screen .container {
+    padding-top: 2rem !important;
+  }
+
+  .display-title {
+    font-size: clamp(2.5rem, 11vw, 3.7rem);
+  }
+
+  .intro-copy {
+    font-size: .95rem;
+  }
+
+  .mascot-stage {
+    min-height: 280px;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .capybara {
+    font-size: 8rem;
+    bottom: 34px;
+    left: 7%;
+  }
+
+  .minion {
+    font-size: 6rem;
+    bottom: 43px;
+    right: 5%;
+  }
+
+  .mascot-caption {
+    top: 10%;
+    right: 7%;
+  }
+
+  .birthday-title {
+    font-size: clamp(2.45rem, 10vw, 3.8rem);
+  }
+
+  .birthday-mascots {
+    min-height: 230px;
+  }
+
+  .big-capy {
+    font-size: 7rem;
+  }
+
+  .big-minion {
+    font-size: 5rem;
+  }
+
+  .cake {
+    font-size: 3rem;
+  }
+
+  .panel-cute,
+  .memories-section {
+    border-radius: 22px;
+  }
+
+  .love-letter {
+    font-size: .94rem;
+  }
+}
+
+/* Menghormati pengaturan reduce motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+.mascot-stage {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  min-height: 440px;
+  margin: 0 auto;
+  padding: 35px 15px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mascot-images {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 30px);
+}
+
+.mascot-emoji {
+  position: relative;
+  flex: 0 1 48%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascot-emoji img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+/* Caption */
+.mascot-caption {
+  position: relative;
+  z-index: 3;
+  margin-top: 22px;
+  padding: 11px 24px;
+  border-radius: 50px;
+  background: #fff;
+  color: #e75480;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(231, 84, 128, 0.12);
+}
+
+/* Dekorasi */
+.doodle {
+  position: absolute;
+  z-index: 1;
+  color: #f28bb2;
+  font-size: 30px;
+  pointer-events: none;
+}
+
+.doodle-one {
+  top: 8%;
+  left: 10%;
+}
+
+.doodle-two {
+  top: 16%;
+  right: 10%;
+}
+
+.doodle-three {
+  top: 48%;
+  left: 5%;
+}
+
+.cloud {
+  position: absolute;
+  z-index: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.65);
+  pointer-events: none;
+}
+
+.cloud-left {
+  left: 0;
+  bottom: 25%;
+}
+
+.cloud-right {
+  right: 0;
+  bottom: 30%;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .mascot-stage {
+    max-width: 540px;
+    min-height: 400px;
+  }
+
+  .mascot-emoji img {
+    max-width: 220px;
+    max-height: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .mascot-stage {
+    width: 100%;
+    max-width: 430px;
+    min-height: 340px;
+    padding: 30px 8px 55px;
+  }
+
+  .mascot-images {
+    gap: 8px;
+  }
+
+  .mascot-emoji {
+    flex-basis: 49%;
+  }
+
+  .mascot-emoji img {
+    max-width: 190px;
+    max-height: 220px;
+  }
+
+  .mascot-caption {
+    margin-top: 18px;
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+
+  .doodle {
+    font-size: 24px;
+  }
+
+  .cloud {
+    width: 65px;
+    height: 28px;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 360px) {
+  .mascot-stage {
+    min-height: 290px;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .mascot-images {
+    gap: 4px;
+  }
+
+  .mascot-emoji img {
+    max-height: 175px;
+  }
+}
+
